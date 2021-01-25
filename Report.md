@@ -13,7 +13,7 @@ During training, random minibatch of experience tuples are sampled from replay m
 
 The network is updated every 4 steps to accelerate training using the following update rule:
 
-![Alt text](DQN_update_rule.png?raw=true "Title")
+![Alt text](DQN_update_rule.png?raw=true =100x250)
 
 MSE is used for the TD error and soft update is performed to the model parameters: θ_target = τ*θ_local + (1 - τ)*θ_target.
 
