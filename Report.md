@@ -43,6 +43,8 @@ QNetwork(
 ```
 
 ## Plot of Rewards
+Average reward of 13 over 100 epochs is achieved at approximately 355 episodes.
+
 <img src="plot_of_rewards.png" width="65%" height="65%">.
 
 ## IIdeas for Future Work
