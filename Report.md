@@ -43,7 +43,7 @@ QNetwork(
 ```
 
 ## Plot of Rewards
-<img src="plot_of_rewards.png" width="100%">.
+<img src="plot_of_rewards.png" width="65%" height="65%">.
 
 ## IIdeas for Future Work
 
