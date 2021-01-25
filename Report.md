@@ -12,35 +12,32 @@ During sampling, the agent chooses an action from current state, observes reward
 During training, random minibatch of experience tuples are sampled from replay memory (uniformly). 
 
 The network is updated every 4 steps to accelerate training using the following update rule:
-
-![Alt text](DQN_update_rule.png?raw=true =100x250)
-
-<img src="DQN_update_rule.png" width="40%">.
+<img src="DQN_update_rule.png" width="65%">.
 
 MSE is used for the TD error and soft update is performed to the model parameters: θ_target = τ*θ_local + (1 - τ)*θ_target.
 
 Hyperparameters used:
-BUFFER_SIZE = int(1e5)  # replay buffer size
-BATCH_SIZE = 64         # minibatch size
-GAMMA = 0.99            # discount factor
-TAU = 1e-3              # for soft update of target parameters
-LR = 5e-4               # learning rate 
-UPDATE_EVERY = 4        # how often to update the network
-state_size = 37 # number of states
-action_size = 4 # number of actions
-n_episodes=2000 # maximum number of episodes to execute
-max_t=1000 # maximum number of timesteps per episode
-eps_start=1.0 # starting value of epsilon, for epsilon-greedy action selection
-eps_end=0.01 # minimum value of epsilon
-eps_decay=0.995 # multiplicative factor (per episode) for decreasing epsilon
+- BUFFER_SIZE = int(1e5)  # replay buffer size
+- BATCH_SIZE = 64         # minibatch size
+- GAMMA = 0.99            # discount factor
+- TAU = 1e-3              # for soft update of target parameters
+- LR = 5e-4               # learning rate 
+- UPDATE_EVERY = 4        # how often to update the network
+- state_size = 37 # number of states
+- action_size = 4 # number of actions
+- n_episodes=2000 # maximum number of episodes to execute
+- max_t=1000 # maximum number of timesteps per episode
+- eps_start=1.0 # starting value of epsilon, for epsilon-greedy action selection
+- eps_end=0.01 # minimum value of epsilon
+- eps_decay=0.995 # multiplicative factor (per episode) for decreasing epsilon
 
-The neural network used consists of 2 linear layers of 128 neurons with dropout layer in between followed by a final linear layer with output the number of possible actions. Input size is 1D array of size equal to state_size. The neural network has the following architecture on pytorch:
-QNetwork(
-  (fc1): Linear(in_features=37, out_features=128, bias=True)
-  (dropout): Dropout(p=0.25)
-  (fc2): Linear(in_features=128, out_features=128, bias=True)
-  (fc3): Linear(in_features=128, out_features=4, bias=True)
-)
+The neural network used consists of 2 linear layers of 128 neurons with dropout layer in between followed by a final linear layer with output the number of possible actions. Input size is 1D array of size equal to state_size. The neural network has the following architecture on pytorch:<br />
+QNetwork(<br />
+  (fc1): Linear(in_features=37, out_features=128, bias=True)<br />
+  (dropout): Dropout(p=0.25)<br />
+  (fc2): Linear(in_features=128, out_features=128, bias=True)<br />
+  (fc3): Linear(in_features=128, out_features=4, bias=True)<br />
+)<br />
 
 
 ## Plot of Rewards
