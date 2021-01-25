@@ -1,0 +1,46 @@
+# drln_navigation
+Navigation project for UDACITY course Deep Reinforcement Learning
+
+
+## Learning Algorithm
+A DQN agent is trained (agent.py) with fixed Q-targets and experience replay memory of size 10000, where experience tuples of ("state", "action", "reward", "next_state", "done").
+
+An action-value function qnetwork_local is initialized with random weights and targer action-value weights qnetwork_target.
+
+During sampling, the agent chooses an action from current state, observes reward and the next state. This experience is stored in memory (class ReplayBuffer). The action is selected based on epsilon-greedy policy.
+
+During training, random minibatch of experience tuples are sampled from replay memory (uniformly). 
+
+The network is updated every 4 steps to accelerate training using the following update rule:
+![alt text](DQN_update_rule.png
+
+MSE is used for the TD error and soft update is performed to the model parameters: θ_target = τ*θ_local + (1 - τ)*θ_target.
+
+Hyperparameters used:
+BUFFER_SIZE = int(1e5)  # replay buffer size
+BATCH_SIZE = 64         # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR = 5e-4               # learning rate 
+UPDATE_EVERY = 4        # how often to update the network
+state_size = 37 # number of states
+action_size = 4 # number of actions
+n_episodes=2000 # maximum number of episodes to execute
+max_t=1000 # maximum number of timesteps per episode
+eps_start=1.0 # starting value of epsilon, for epsilon-greedy action selection
+eps_end=0.01 # minimum value of epsilon
+eps_decay=0.995 # multiplicative factor (per episode) for decreasing epsilon
+
+The neural network used consists of 2 linear layers of 128 neurons with dropout layer in between followed by a final linear layer with output the number of possible actions. Input size is 1D array of size equal to state_size. The neural network has the following architecture on pytorch:
+QNetwork(
+  (fc1): Linear(in_features=37, out_features=128, bias=True)
+  (dropout): Dropout(p=0.25)
+  (fc2): Linear(in_features=128, out_features=128, bias=True)
+  (fc3): Linear(in_features=128, out_features=4, bias=True)
+)
+
+
+## Plot of Rewards
+
+
+## IIdeas for Future Work
