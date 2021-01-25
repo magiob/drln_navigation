@@ -12,7 +12,8 @@ During sampling, the agent chooses an action from current state, observes reward
 During training, random minibatch of experience tuples are sampled from replay memory (uniformly). 
 
 The network is updated every 4 steps to accelerate training using the following update rule:
-![alt text](DQN_update_rule.png
+
+![Alt text](DQN_update_rule.png?raw=true "Title")
 
 MSE is used for the TD error and soft update is performed to the model parameters: θ_target = τ*θ_local + (1 - τ)*θ_target.
 
