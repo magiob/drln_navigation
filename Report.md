@@ -47,7 +47,7 @@ Average reward of 13 over 100 epochs is achieved at approximately 355 episodes.
 
 <img src="plot_of_rewards.png" width="65%" height="65%">.
 
-## IIdeas for Future Work
+## Ideas for Future Work
 
 - Experimenting with deeper and different architectures along with pre-trained weights. I attempted to train a 1D convolutional network without success. It could potentially offer a performance boost. Also exhaustive search of the optimal number of layers and neurons could lead to performance improvement. Fine-tuning the learning rate or applying a decaying rate could also improve training.
 - I tried to implement experience prioritized replay, but I could not even reach the limit of average reward 13. Most likely, my implementation was wrong. According to literature, selecting important experiences more frequently than others based on probabilities should help learn the environment more efficiently.
