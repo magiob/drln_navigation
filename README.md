@@ -20,6 +20,8 @@ UDACITY workspace was used for the project. The environment uses Python 3.6. The
 - numpy: 1.12.1
 - unityagents
 
+Optional: if not running on workspace, clone the DRLND repo https://github.com/udacity/deep-reinforcement-learning#dependencies, install dependencies and download the Unity Environment.
+
 ## Instructions
 Open Navigation.ipynb and run all cells one by one. The notebook imports the class of Agent from agent.py. 
 
