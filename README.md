@@ -19,6 +19,7 @@ UDACITY workspace was used for the project. The environment uses Python 3.6. The
 - torch: 0.4.0
 - numpy: 1.12.1
 - unityagents
+- OpenAI Gym (https://github.com/openai/gym)
 
 Optional: if not running on workspace, clone the DRLND repo https://github.com/udacity/deep-reinforcement-learning#dependencies, install dependencies and download the Unity Environment.
 
